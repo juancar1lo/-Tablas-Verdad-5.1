@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Calculadora de Tablas de Verdad y Visualización Interactiva del Árbol Sintáctico" />
+    <title>Calculadora de Tablas de Verdad y Árbol Sintáctico</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora de Tablas de Verdad</h1>
+        <div class="leyenda">
+            <p><strong>Leyenda de Símbolos</strong></p>
+            <ul>
+                <li><strong>∧</strong> Conjunción</li>
+                <li><strong>∨</strong> Disyunción</li>
+                <li><strong>¬</strong> Negación</li>
+                <li><strong>→</strong> Condicional</li>
+                <li><strong>↔</strong> Bicondicional</li>
+                <li><strong>( )</strong> Paréntesis</li>
+                <li><strong>p, q, r, s, t</strong> Variables</li>
+            </ul>
+        </div>
+        <!-- Botones de Variables en una fila -->
+        <div class="botones-variables">
+            <button type="button" id="btnP">p</button>
+            <button type="button" id="btnQ">q</button>
+            <button type="button" id="btnR">r</button>
+            <button type="button" id="btnS">s</button>
+            <button type="button" id="btnT">t</button>
+        </div>
+        <!-- Botones de Símbolos Lógicos en otra fila -->
+        <div class="botones-simbolos">
+            <button type="button" id="btnAnd">∧</button>
+            <button type="button" id="btnOr">∨</button>
+            <button type="button" id="btnNot">¬</button>
+            <button type="button" id="btnConditional">→</button>
+            <button type="button" id="btnBiconditional">↔</button>
+            <button type="button" id="btnOpenParen">(</button>
+            <button type="button" id="btnCloseParen">)</button>
+        </div>
+        <form id="tablaVerdadForm">
+            <label for="expresion"><strong>Expresión Lógica:</strong></label>
+            <textarea id="expresion" name="expresion" required></textarea>
+            <div class="form-buttons">
+                <button type="submit" id="btnCalcular">Calcular</button>
+                <button type="button" id="btnLimpiar">Limpiar</button>
+                <button type="button" id="btnExportar">Exportar PDF</button>
+            </div>
+        </form>
+        <div id="resultadoTabla"></div>
+        <!-- Contenedor para el árbol sintáctico -->
+        <div id="parseTree"></div>
+        <!-- Botón para resetear el zoom del árbol -->
+        <button type="button" id="btnResetZoom">Resetear Vista</button>
+    </div>
+    <!-- Tooltip para la visualización del árbol -->
+    <div id="tooltip"></div>
+    <footer>
+        <div class="license-frame">
+            Work licenced under CC BY-NC 4.0 | by JC v5.1&nbsp;
+            <img src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" alt="CC BY-NC 4.0" />
+        </div>
+    </footer>
+    <!-- Carga de librerías externas -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
